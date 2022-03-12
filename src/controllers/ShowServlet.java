@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Message;
-import utils.DButil;
+import utils.DBUtil;
 
 @WebServlet("/show")
 public class ShowServlet extends HttpServlet {
@@ -22,7 +22,7 @@ public class ShowServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        EntityManager em = DButil.createEntityManager();
+        EntityManager em = DBUtil.createEntityManager();
 
         // 該当のIDのメッセージ1件のみをデータベースから取得
         Message m = em.find(Message.class, Integer.parseInt(request.getParameter("id")));

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Message;
-import utils.DButil;
+import utils.DBUtil;
 
 @WebServlet("/update")
 public class Update extends HttpServlet {
@@ -24,7 +24,7 @@ public class Update extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = request.getParameter("_token");
         if(_token != null && _token.equals(request.getSession().getId())) {
-            EntityManager em = DButil.createEntityManager();
+            EntityManager em = DBUtil.createEntityManager();
 
             // セッションスコープからメッセージのIDを取得して
             // 該当のメッセージ一件のみをデータベースから取得
